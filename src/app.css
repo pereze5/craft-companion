@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
+
+/* =========================================
+   Root Theme
+========================================= */
+
+:root {
+  --bg: #1f1b24;
+  --bg-alt: #2b2533;
+
+  --panel: rgba(46, 43, 55, 0.92);
+  --panel-light: rgba(60, 56, 72, 0.92);
+
+  --border: rgba(255, 255, 255, 0.12);
+
+  --text: rgba(255, 255, 255, 0.88);
+  --text-muted: rgba(255, 255, 255, 0.65);
+
+  --accent: #ffe4b4;
+  --accent-strong: #ffd082;
+
+  --success: #78d381;
+  --danger: #ff8d8d;
+
+  --shadow:
+    0 10px 30px rgba(0, 0, 0, 0.28);
+
+  --radius: 18px;
+}
+
+/* =========================================
+   Global Reset
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  font-family:
+    "Source Sans Pro",
+    Helvetica,
+    sans-serif;
+
+  color: var(--text);
+
+  background:
+    linear-gradient(
+      135deg,
+      #2f2840 0%,
+      #372d46 35%,
+      #4b3952 100%
+    );
+
+  background-attachment: fixed;
+
+  line-height: 1.5;
+
+  padding: 1.25rem;
+}
+
+/* =========================================
+   Typography
+========================================= */
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  color: white;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* =========================================
+   Layout Helpers
+========================================= */
+
+section {
+  margin-bottom: 1.25rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+/* =========================================
+   Card Styling
+========================================= */
+
+.card,
+.active-session,
+.stopping-card {
+  background: var(--panel);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  padding: 1rem;
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   Inputs
+========================================= */
+
+input,
+textarea,
+select {
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 12px;
+
+  color: white;
+
+  padding: 0.8rem;
+
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+
+  font: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+
+  border-color: var(--accent);
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* =========================================
+   Buttons
+========================================= */
+
+button {
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5c496f,
+      #765d8d
+    );
+
+  color: white;
+
+  padding:
+    0.9rem 1.1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.12s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  opacity: 0.94;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* =========================================
+   Counter UI
+========================================= */
+
+.work-counter {
+  background: var(--panel-light);
+
+  border-radius: 22px;
+
+  padding: 1.25rem;
+
+  margin:
+    1rem 0 1.5rem 0;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+}
+
+.counter-label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.counter-value {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+
+  margin:
+    0.5rem 0 1rem 0;
+
+  color: white;
+}
+
+.counter-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.counter-button {
+  flex: 1;
+
+  height: 72px;
+
+  border-radius: 18px;
+
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.counter-button.primary {
+  background:
+    linear-gradient(
+      135deg,
+      #ffcb7b,
+      #ffb14d
+    );
+
+  color: #2e2b37;
+}
+
+.counter-button.secondary {
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================
+   Metadata / Notes
+========================================= */
+
+.metadata,
+.session-time,
+small {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.pattern-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.page {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* =========================================
+   Error Messages
+========================================= */
+
+.error {
+  color: var(--danger);
+  margin-top: 1rem;
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 700px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .counter-value {
+    font-size: 3rem;
+  }
+
+  .counter-button {
+    height: 64px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dashboard {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+
+  .right-rail {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body {
+    padding: 0.75rem;
+  }
+
+  .dashboard {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .sidebar,
+  .main-panel,
+  .right-rail {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .card,
+  .active-session,
+  .stopping-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 0 1rem 0 !important;
+    padding: 0.85rem;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .project-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .counter-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  small,
+  p,
+  li,
+  strong {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  #svelte,
+  body > div {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .dashboard,
+  .dashboard * {
+    max-width: 100%;
+  }
+
+  .dashboard {
+    display: block !important;
+    grid-template-columns: none !important;
+    overflow-x: hidden !important;
+  }
+
+  aside,
+  main,
+  .sidebar,
+  .main-panel,
+  .right-rail {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-column: auto !important;
+  }
+
+  button {
+    white-space: normal;
+  }
+}
