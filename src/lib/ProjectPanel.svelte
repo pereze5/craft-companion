@@ -460,4 +460,86 @@ onMount(() => {
   .error {
     color: crimson;
   }
+
+@media (max-width: 900px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 0.65rem;
+  }
+
+  .sidebar,
+  .main-panel,
+  .right-rail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 0.65rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0.7rem;
+    overflow: hidden;
+  }
+
+  .project-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .project-actions button {
+    width: 100%;
+    margin: 0;
+    white-space: normal;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
 </style>
+
+@media (max-width: 800px) and (max-height: 520px) {
+  .dashboard,
+  .sidebar,
+  .main-panel,
+  .right-rail {
+    gap: 0.45rem;
+  }
+
+  .card {
+    padding: 0.55rem;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-actions {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    padding: 0.65rem 0.75rem;
+  }
+}
