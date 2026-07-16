@@ -510,8 +510,6 @@ onMount(() => {
     min-width: 0;
   }
 }
-</style>
-
 @media (max-width: 800px) and (max-height: 520px) {
   .dashboard,
   .sidebar,
@@ -543,3 +541,5 @@ onMount(() => {
     padding: 0.65rem 0.75rem;
   }
 }
+</style>
+
